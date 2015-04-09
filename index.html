@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="womenEngApp">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/external/tablesort.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="js/external/angular-tablesort.min.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body ng-controller="WomenEngCtrl">
+    <div class="container-fluid">
+      <header class="container">
+        <h2>Women in engineering</h2>
+        <p>Even resource-constrained startups can recruit women—it's not actually that hard to source women in engineering. <a href="https://medium.com/@cjc/recently-i-spoke-to-a-founder-of-a-20-person-startup-who-said-if-google-with-hundreds-maybe-bdf7132d78d7">Read more</a>.</p>
+
+        <a href="https://docs.google.com/a/stripe.com/forms/d/1eWKYU7W3gAYZUoGCvG98kvMDrwoL3TfE4OjvZHVHaVc/viewform"><button type="button" class="btn btn-primary">Submit an addition</button></a>
+        <a href="mailto:cristinajcordova@gmail.com"><button type="button" class="btn btn-default">Request removal</button></a>
+      </header>
+
+      <section id="list">
+        <table class="table table-condensed table-striped table-hover table-responsive" ts-wrapper>
+          <thead>
+            <th ts-criteria="name|lowercase" ts-default>Name</th>
+            <th ts-criteria="role|lowercase" class="hidden-xs hidden-sm">Role</th>
+            <th ts-criteria="company|lowercase">Company</th>
+            <th>Links</th>
+          </thead>
+          <tr ng-repeat="w in women" ts-repeat>
+            <td>{{w.name}}</td>
+            <td class="hidden-xs hidden-sm">{{w.role}}</td>
+            <td>{{w.company}}</td>
+            <td>
+              <span ng-repeat="l in ['linkedin', 'twitter', 'web', 'github']" ng-if="w.links[l]">
+                <a href="{{w.links[l]}}"><i class="fa fa-{{l}}"></i></a></span>
+            </td>
+          </tr>
+        </table>
+
+        <a class="center" href="{{csv}}"><button type="button" class="btn btn-default btn-xs center-block">Download .csv</button></a>
+      </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>

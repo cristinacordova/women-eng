@@ -1,0 +1,11 @@
+header {
+  text-align: center;
+}
+
+#list {
+  padding: 2em 0;
+}
+
+.center {
+  text-decoration: none !important;
+}
