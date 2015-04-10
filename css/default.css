@@ -2,6 +2,11 @@ header {
   text-align: center;
 }
 
+header a button {
+  display: inline-block;
+  margin: 10px 0;
+}
+
 #list {
   padding: 2em 0;
 }
