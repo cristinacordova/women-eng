@@ -15,8 +15,9 @@ womenEngApp.controller("WomenEngCtrl", function($scope, $http) {
     var len = data.length;
     var trim = 3;
     $scope.women = data.splice(trim, len);
+    $scope.count = len - trim;
 
-    for (var i = 0; i < len - trim; i++) {
+    for (var i = 0; i < $scope.count; i++) {
       var w = $scope.women[i];
 
       if (w['gsx$womeninengineering']) {
