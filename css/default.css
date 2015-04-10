@@ -11,6 +11,11 @@ header a button {
   padding: 2em 0;
 }
 
+/* alias for .fa-globe */
+.fa .fa-web:before{
+  content:"\f0ac"
+}
+
 .center {
   text-decoration: none !important;
 }
