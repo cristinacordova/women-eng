@@ -12,7 +12,7 @@ header a button {
 }
 
 /* alias for .fa-globe */
-.fa .fa-web:before{
+.fa-web:before{
   content:"\f0ac"
 }
 
